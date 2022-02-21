@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+// VARIABLES ----------
+$bg: #ebeef3;
+$white: #fff;
+$text: #000;
+$border: #9b9b9b;
+$shadow: #bebebe;
+
+// TEMPLATES ----------
+%inp{
+    padding: 10px;
+    border: 1px solid $border;
+    border-radius: 5px;
+    background-color: $bg;
+}
+%btn{
+    padding: 7px 14px;
+    background-color: #fff;
+    border: 1px solid $border;
+    border-radius: 5px;
+    cursor: pointer;
+}
+%note{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #cecece;
+    padding: 7px 10px; 
+    margin:20px;
+}
+
+// BASIC THINGS ----------
+body{
+    font-family: 'Roboto Mono', monospace;
+    background-color: $bg;
+    padding-top: 60px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// NAVBAR ----------
+.navbar{
+    background-color: $white;
+    border-bottom: 1px solid $border;
+    box-shadow: 0px 0px 5px $shadow;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.navbar-inner{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    font-size: 24px;
+    a{
+        text-decoration: none;
+        color: $text;
+    }
+}
+nav{
+    ul{
+        display: flex;
+        justify-content: space-between;
+    }
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        margin-left: 2rem;
+    }
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: $text;
+        line-height: none;
+        img{
+            height: 18px;
+        }
+    }
+}
+// AUTH PAGES ----------------------
+.form{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 3rem);
+    align-items: center;
+    justify-content: space-around;
+}
+.form-inner{
+    padding: 20px;
+    background-color: $white;
+    border: 1px solid $border;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px $shadow;
+}
+.title{
+    text-align: center;
+    font-size: 24px;
+}
+.auth-form{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    input{
+        width: 25vw;
+        @extend %inp;
+    }
+}
+.action{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .dha{
+        margin-top: 1rem;
+        font-size: 14px;
+        opacity: .8;
+        a{
+            color: $text;
+        }
+    }
+}
+.btn{
+    text-align: center;
+    @extend %btn
+}
+
+
+// NOTES PAGE ----------
+.notes{
+    margin: 3rem 0;
+    border: 1px solid $border;
+    border-radius: 5px;
+    background-color: $white;
+    box-shadow: 0px 0px 5px $shadow;
+}
+.note{
+    @extend %note;
+}
+.complete-note{
+    @extend %note;
+    .note-text{
+        font-weight: bold;
+        text-decoration: line-through;
+    }
+}
+.note-inner-form{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a,
+    button{
+        margin-right: .5rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        img{
+        height: 24px;
+        }
+    }
+}
+.note-inner{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    form{
+        img{
+            height: 24px;
+        }
+    }
+}
+.note-created{
+    font-size: 12px;
+    opacity: 0.5;
+}
+.note-text{
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+.edit{
+    text-decoration: none;
+    color: black;
+}
+.delete-btn{
+    background: none;
+    border: none;
+    padding: 0;
+    @extend %btn;
+}
+.complete-btn{
+    background: none;
+    border: none;
+    color: green;
+    padding: 0;
+    @extend %btn;
+}
+// -------------
+.note-form{
+    width: 100%;
+    margin-top: 3rem;
+    form{
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-around;
+    }
+    .inp{
+        width: 25vw;
+        @extend %inp;
+    }
+}
